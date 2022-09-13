@@ -52,7 +52,7 @@ class DemoController(
 
 @Service
 class DemoService(
-    private val registry: MeterRegistry //
+    private val registry: MeterRegistry
 ) {
 
     @Timed(

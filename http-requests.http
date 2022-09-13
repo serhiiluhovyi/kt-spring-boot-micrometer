@@ -3,3 +3,9 @@ GET http://localhost:8081/timed/hello
 
 ###
 GET http://localhost:8081/actuator/prometheus
+
+###
+GET http://localhost:8082/demo/hello
+
+###
+GET http://localhost:8082/actuator/prometheus

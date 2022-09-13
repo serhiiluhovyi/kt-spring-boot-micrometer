@@ -20,3 +20,31 @@ smth_time_seconds_max{class="com.example.timedannotation.DemoService",exception=
 
 
 
+## counter-timer-gauge
+
+```
+GET http://localhost:8082/demo/hello
+GET http://localhost:8082/actuator/prometheus
+
+# HELP app_request_start_with_a The number of requests start with A letter
+# TYPE app_request_start_with_a gauge
+app_request_start_with_a 2.0
+
+# HELP app_demo_counter_demo_total  
+# TYPE app_demo_counter_demo_total counter
+app_demo_counter_demo_total{type="FAILED",} 0.0
+app_demo_counter_demo_total{type="TOTAL",} 10.0
+app_demo_counter_demo_total{type="PROCESSED",} 10.0
+
+# HELP app_smth_timer_seconds_max  
+# TYPE app_smth_timer_seconds_max gauge
+app_smth_timer_seconds_max{type="method-timer",} 0.052
+# HELP app_smth_timer_seconds  
+# TYPE app_smth_timer_seconds summary
+app_smth_timer_seconds{type="method-timer",quantile="0.5",} 0.025952256
+app_smth_timer_seconds{type="method-timer",quantile="0.95",} 0.052166656
+app_smth_timer_seconds_count{type="method-timer",} 10.0
+app_smth_timer_seconds_sum{type="method-timer",} 0.276
+```
+
+
